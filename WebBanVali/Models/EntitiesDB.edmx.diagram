@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b2f1acbc13ed48f3a7029d244d632c08" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="DBVilaStoreModel.AdminUser" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBVilaStoreModel.Category" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBVilaStoreModel.Customer" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBVilaStoreModel.OrderDetail" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBVilaStoreModel.OrderPro" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBVilaStoreModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="DBVilaStoreModel.FK_Pro_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="DBVilaStoreModel.FK__OrderPro__IDCus__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="DBVilaStoreModel.FK__OrderDeta__IDOrd__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="DBVilaStoreModel.FK__OrderDeta__IDPro__5535A963" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
