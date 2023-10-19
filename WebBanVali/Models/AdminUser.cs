@@ -11,12 +11,28 @@ namespace WebBanVali.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class AdminUser
     {
+        [Display(Name = "Mã User.")]
         public int ID { get; set; }
+        [Required(ErrorMessage = "Không ?? tr?ng tên.")]
+        [Display(Name ="Tên User.")]
         public string NameUser { get; set; }
+        [DisplayName("V? trí.")]
         public string RoleUser { get; set; }
+        [DisplayName("Nh?p m?t kh?u.")]
+        [Required(ErrorMessage = "Không ?? tr?ng m?t kh?u.")]
+        [DataType(DataType.Password)]
         public string PasswordUser { get; set; }
+        [NotMapped]
+        [Compare("PasswordUser")]
+        [DisplayName("Nh?p l?i m?t kh?u.")]
+        public string ConfirmPassword { get; set; }
+        [NotMapped]
+        public string ErrorLogin { get; set; }
     }
 }
