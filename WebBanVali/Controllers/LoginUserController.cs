@@ -17,6 +17,26 @@ namespace WebBanVali.Controllers
             return View();
         }
         [HttpPost]
+        public ActionResult RegisterUser(AdminUser _user)
+        {
+            if (ModelState.IsValid)
+            {
+                var check_ID = database.AdminUsers.Where(s => s.ID == _user.ID).FirstOrDefault();
+                if (check_ID != null)
+                {
+                    database.Configuration.ValidateOnSaveEnabled = false;
+                    database.AdminUsers.Add(_user);
+                    database.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.ErrorRegister = "This ID is exist";
+                        return View();
+                }
+            }
+            return View();
+        }
         public ActionResult LoginAccount(AdminUser _user)
         {
             var check = database.AdminUsers.Where(s => s.ID == _user.ID && s.PasswordUser == _user.PasswordUser).FirstOrDefault();
